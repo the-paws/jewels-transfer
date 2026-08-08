@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#eef8f0">
+  <meta name="description" content="Jewels.gg — магазин MLBB Diamonds">
+  <title>Jewels.gg — MLBB Diamonds</title>
+  <style>
+    :root {
+      --mint: #eef8f0;
+      --mint-2: #e5f2e8;
+      --blue: #7899d2;
+      --blue-dark: #607fb8;
+      --ink: #182033;
+      --white: rgba(255,255,255,.72);
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--mint);
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px 18px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 12% 15%, rgba(120,153,210,.14), transparent 28%),
+        radial-gradient(circle at 88% 82%, rgba(120,153,210,.12), transparent 30%),
+        var(--mint);
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(2px);
+      background: rgba(120,153,210,.10);
+      pointer-events: none;
+    }
+    .blob.one { width: 280px; height: 280px; top: -130px; right: -90px; }
+    .blob.two { width: 220px; height: 220px; bottom: -110px; left: -70px; }
+
+    .card {
+      width: min(560px, 100%);
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      padding: 34px 24px 30px;
+      border: 1px solid rgba(255,255,255,.8);
+      background: rgba(255,255,255,.38);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 32px;
+      box-shadow: 0 22px 70px rgba(70, 91, 130, .12);
+    }
+
+    .logo-wrap {
+      width: min(340px, 78vw);
+      margin: 0 auto 8px;
+      border-radius: 24px;
+      overflow: hidden;
+      background: var(--mint);
+    }
+
+    .logo {
+      width: 100%;
+      display: block;
+      mix-blend-mode: multiply;
+    }
+
+    .brand {
+      font-size: clamp(34px, 9vw, 58px);
+      line-height: 1;
+      font-weight: 850;
+      letter-spacing: -2.5px;
+      color: var(--blue-dark);
+      margin: 12px 0 12px;
+    }
+
+    .subtitle {
+      margin: 0 auto;
+      max-width: 390px;
+      font-size: 17px;
+      line-height: 1.55;
+      color: #596274;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-width: min(330px, 100%);
+      margin-top: 28px;
+      padding: 16px 24px;
+      border-radius: 17px;
+      background: var(--blue);
+      color: white;
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: 750;
+      box-shadow: 0 12px 28px rgba(96,127,184,.25);
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: var(--blue-dark);
+      box-shadow: 0 16px 34px rgba(96,127,184,.32);
+    }
+
+    .button:active { transform: translateY(0); }
+
+    .tg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    }
+
+    .note {
+      margin-top: 18px;
+      font-size: 13px;
+      color: #7a8290;
+    }
+
+    .footer {
+      margin-top: 26px;
+      font-size: 12px;
+      color: #89909d;
+    }
+
+    @media (max-width: 480px) {
+      .page { padding: 14px; }
+      .card { padding: 25px 16px 23px; border-radius: 25px; }
+      .logo-wrap { width: min(320px, 86vw); }
+      .subtitle { font-size: 15px; }
+      .button { margin-top: 23px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="blob one"></div>
+    <div class="blob two"></div>
+
+    <section class="card">
+      <div class="logo-wrap">
+        <img class="logo" src="IMG_2219.jpeg" alt="Jewels.gg">
+      </div>
+
+      <h1 class="brand">Jewels.gg</h1>
+      <p class="subtitle">
+        Магазин алмазов для Mobile Legends.<br>
+        Быстро, удобно и без лишнего.
+      </p>
+
+      <a class="button" href="https://t.me/jewels_gg" target="_blank" rel="noopener">
+        <svg class="tg" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21.4 3.3 18.1 20c-.25 1.18-.91 1.47-1.84.92l-5.08-3.74-2.45 2.36c-.27.27-.5.5-1.03.5l.37-5.18 9.43-8.52c.41-.37-.09-.58-.64-.21L5.2 13.62.18 12.05c-1.09-.34-1.11-1.09.23-1.6L20.02 2.8c.92-.34 1.73.21 1.38.5Z"/>
+        </svg>
+        Перейти в Telegram
+      </a>
+
+      <div class="note">@jewels_gg</div>
+      <div class="footer">© 2026 Jewels.gg</div>
+    </section>
+  </main>
+</body>
+</html>
