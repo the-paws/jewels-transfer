@@ -1,155 +1,301 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#07090c" />
-  <meta name="description" content="Azamatuly Muhamedzhan — personal site, skills, interests and contacts." />
-  <title>Azamatuly — Personal Site</title>
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jewels.gg — алмазы Mobile Legends, звёзды и Premium для Telegram</title>
+<meta name="description" content="Jewels.gg: алмазы Mobile Legends для Глобала, Турции и России, звёзды и Premium для Telegram. Оплата в тенге, заказ в Telegram-боте.">
+<meta property="og:title" content="Jewels.gg — алмазы Mobile Legends и Telegram Premium">
+<meta property="og:description" content="Пополнение игр и Telegram в тенге. Заказ оформляется в боте @jewelsstorebot.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💎%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#03211c; --deep:#06352c; --line:#12493d;
+  --emerald:#19b98a; --mint:#9ff2d0; --gold:#f0ce7a; --gold2:#d29a3c;
+  --text:#f2fbf6; --mute:#8fb5a7;
+  --display:"Playfair Display",Georgia,"Times New Roman",serif;
+  --body:"Onest",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font:400 17px/1.65 var(--body);overflow-x:hidden;
+  background-image:
+   radial-gradient(50rem 36rem at 90% 0%,rgba(25,185,138,.22),transparent 62%),
+   radial-gradient(34rem 26rem at 0% 55%,rgba(240,206,122,.07),transparent 62%)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+header{display:flex;justify-content:space-between;align-items:center;padding:24px 0}
+.logo{font:700 26px var(--display);text-decoration:none;letter-spacing:.005em}
+.logo i{font-style:normal;color:var(--gold)}
+header nav{display:flex;gap:26px;font-size:15px;color:var(--mute)}
+header nav a{text-decoration:none}
+header nav a:hover{color:var(--text)}
+
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center;padding:40px 0 64px}
+h1{font:700 clamp(34px,5.4vw,60px)/1.06 var(--display);letter-spacing:-.015em;max-width:12em}
+.lead{margin:24px 0 34px;color:var(--mute);max-width:33em;font-size:18px}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 28px;border-radius:14px;
+  font:700 16px var(--body);text-decoration:none;transition:transform .15s,box-shadow .15s,border-color .15s}
+.btn.main{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#2a1c04;
+  box-shadow:0 12px 34px -12px rgba(240,206,122,.7),inset 0 1px 0 rgba(255,255,255,.45)}
+.btn.main:hover{transform:translateY(-2px);box-shadow:0 18px 40px -12px rgba(240,206,122,.85),inset 0 1px 0 rgba(255,255,255,.45)}
+.btn.ghost{border:1px solid var(--line);color:var(--text)}
+.btn.ghost:hover{border-color:var(--mint)}
+.btn svg{width:21px;height:21px;fill:currentColor}
+.note{margin-top:18px;font-size:14px;color:var(--mute)}
+
+.gemwrap{position:relative;justify-self:center;width:100%;max-width:420px}
+.gemwrap::before{content:"";position:absolute;inset:8%;border-radius:50%;
+  background:radial-gradient(circle,rgba(25,185,138,.45),transparent 68%);filter:blur(28px)}
+#gem{position:relative;width:100%;display:block;filter:drop-shadow(0 28px 40px rgba(0,0,0,.45))}
+#gem polygon{opacity:0;animation:lit .8s ease forwards;animation-delay:calc(var(--i)*70ms)}
+@keyframes lit{from{opacity:0}to{opacity:1}}
+.sweep{fill:url(#sw);transform:translateX(-300px);animation:sw 1.6s ease-in-out 1.5s 1 forwards}
+@keyframes sw{to{transform:translateX(520px)}}
+
+.facts{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.facts div{padding:22px 24px;border-left:1px solid var(--line)}
+.facts div:first-child{padding-left:0;border-left:0}
+.facts b{display:block;font:600 22px var(--display);color:var(--gold)}
+.facts span{font-size:15px;color:var(--mute)}
+
+section{padding:72px 0 8px}
+h2{font:700 clamp(28px,3.8vw,40px)/1.15 var(--display);letter-spacing:-.01em;margin-bottom:12px}
+.sub{color:var(--mute);max-width:36em;margin-bottom:38px}
+
+.steps{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,1fr);counter-reset:s}
+.steps li{counter-increment:s;padding:0 30px;border-left:1px solid var(--line)}
+.steps li:first-child{padding-left:0;border-left:0}
+.steps li::before{content:counter(s);display:block;font:700 56px/1 var(--display);color:transparent;
+  -webkit-text-stroke:1.5px var(--emerald);margin-bottom:14px}
+.steps b{display:block;font-size:19px;margin-bottom:6px}
+.steps span{color:var(--mute);font-size:16px}
+
+.fine{margin-top:28px;font-size:14px;color:var(--mute)}
+
+
+.hero{position:relative}
+.hero::before{content:"";position:absolute;right:-14%;top:-10%;width:74%;aspect-ratio:1;z-index:-1;pointer-events:none;
+  background:repeating-conic-gradient(from 18deg at 50% 50%,rgba(159,242,208,.075) 0 7.5deg,transparent 7.5deg 15deg);
+  -webkit-mask:radial-gradient(circle,#000 18%,transparent 67%);mask:radial-gradient(circle,#000 18%,transparent 67%)}
+
+.tabs{display:inline-flex;flex-wrap:wrap;gap:6px;padding:6px;margin-bottom:24px;
+  border:1px solid var(--line);border-radius:18px;background:rgba(6,53,44,.7)}
+.tab{font:600 15px var(--body);color:var(--mute);background:none;border:0;padding:12px 22px;
+  border-radius:12px;cursor:pointer;transition:color .15s,background .15s}
+.tab:hover{color:var(--text)}
+.tab[aria-selected=true]{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#2a1c04;
+  box-shadow:0 6px 18px -8px rgba(240,206,122,.8)}
+.board{padding:32px 36px 6px;border:1px solid var(--line);border-radius:26px;
+  background:linear-gradient(160deg,rgba(10,74,60,.5),rgba(6,53,44,.2))}
+.panel{animation:swap .35s ease}
+@keyframes swap{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.group{margin-bottom:30px}
+.group h3{font:600 21px var(--display);color:var(--gold);margin-bottom:14px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);column-gap:56px;border-top:1px solid var(--line)}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 8px;
+  margin:0 -8px;border-bottom:1px solid var(--line);border-radius:6px;transition:background .15s}
+.row:hover{background:rgba(159,242,208,.06)}
+.nm b{font-weight:700;font-size:18px}
+.nm em{font-style:normal;color:var(--gold);margin-left:5px;font-size:15px;font-weight:500}
+.nm small{color:var(--mute);margin-left:8px;font-size:14px}
+.pr{font-weight:700;color:var(--mint);white-space:nowrap;font-size:17px}
+.fine{margin:6px 0 0;font-size:14px;color:var(--mute)}
+@media(max-width:820px){
+  .tabs{display:flex}.tab{flex:1;padding:11px 8px;font-size:14px;text-align:center}
+  .board{padding:22px 20px 2px}
+  .grid{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){.panel{animation:none}}
+
+.final{margin-top:72px;padding:44px 40px;border-radius:24px;display:flex;flex-wrap:wrap;gap:24px;
+  align-items:center;justify-content:space-between;
+  background:linear-gradient(120deg,var(--deep),#0a4a3c);border:1px solid var(--line)}
+.final h2{margin-bottom:6px}
+.final .sub{margin:0}
+footer{margin-top:64px;padding:32px 0 56px;border-top:1px solid var(--line);color:var(--mute);font-size:15px;
+  display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
+footer nav{display:flex;gap:22px;flex-wrap:wrap}
+footer a{text-decoration:none}
+footer a:hover{color:var(--text)}
+
+@media(max-width:820px){
+  .hero{grid-template-columns:1fr;padding-top:16px}
+  .gemwrap{max-width:240px;order:-1;justify-self:start}
+  .facts,.steps,  .facts div{padding:16px 0;border-left:0;border-top:1px solid var(--line)}
+  .facts div:first-child{border-top:0}
+  .steps{gap:30px}.steps li{padding:0;border-left:0}
+    .final{padding:32px 24px}
+  header nav a:not(.keep){display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  #gem polygon{animation:none;opacity:1}.sweep{animation:none;display:none}
+  html{scroll-behavior:auto}.btn{transition:none}
+}
+</style>
 </head>
-<body data-page="home">
-  <nav class="site-nav">
-    <div class="container nav-inner">
-      <a class="brand" href="index.html"><span class="brand-mark"></span><span>AZAMATULY</span></a>
-      <div class="nav-links">
-        <a data-page="home" href="index.html">Главная</a>
-        <a data-page="about" href="about.html">Обо мне</a>
-        <a data-page="skills" href="skills.html">Навыки</a>
-        <a data-page="contact" href="contact.html" class="nav-cta">Контакты</a>
-      </div>
-      <button class="menu-btn" aria-label="Открыть меню">☰</button>
-    </div>
-  </nav>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="#">Jewels<i>.gg</i></a>
+    <nav>
+      <a href="#prices">Цены</a>
+      <a href="#how">Как это работает</a>
+      <a class="keep" href="https://t.me/jewels_reviews">Отзывы</a>
+    </nav>
+  </header>
 
   <main>
-    <section class="hero">
-      <div class="floating-orb" aria-hidden="true"></div>
-      <div class="hero-grid">
-        <div class="hero-copy reveal in">
-          <div class="eyebrow">PERSONAL / 2026</div>
-          <h1>MUHAMEDZHAN<br><span class="outline">AZAMATULY</span><br><span class="accent">В ДВИЖЕНИИ.</span></h1>
-          <p class="hero-lead">Личный сайт человека, который любит людей, технологии, продажи и истории, которые хочется пройти до конца.</p>
-          <div class="hero-meta">
-            <span class="pill">Kazakh · Русский</span>
-            <span class="pill">Python</span>
-            <span class="pill">Sales / Communication</span>
-            <span class="pill">Tensura × One Piece</span>
-          </div>
+    <div class="hero">
+      <div>
+        <h1>Алмазы Mobile Legends и Telegram Premium в тенге</h1>
+        <p class="lead">Пополняйте Mobile Legends в регионах Глобал, Турция и Россия, покупайте звёзды и Premium для Telegram. Оплата через Kaspi или Freedom, заказ оформляется в боте.</p>
+        <div class="cta-row">
+          <a class="btn main" href="https://t.me/jewelsstorebot">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
+            Открыть бота в Telegram
+          </a>
+          <a class="btn ghost" href="https://t.me/jewels_gg">Наш канал</a>
         </div>
-        <div class="hero-bottom reveal in" data-delay="2">
-          <div class="scroll-cue"><span class="line"></span> scroll to explore</div>
-          <div class="status"><i></i> OPEN TO CONNECTIONS</div>
-        </div>
+        <p class="note">Алмазы обычно приходят в течение нескольких минут.</p>
       </div>
+
+      <div class="gemwrap">
+        <svg id="gem" viewBox="0 0 400 400" role="img" aria-label="Изумруд в ступенчатой огранке">
+          <defs>
+            <linearGradient id="tbl" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#d9fff0"/><stop offset=".5" stop-color="#5fe0b4"/><stop offset="1" stop-color="#0c7a5c"/>
+            </linearGradient>
+            <linearGradient id="sw" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+            </linearGradient>
+            <clipPath id="cut"><polygon points="120,40 280,40 360,120 360,280 280,360 120,360 40,280 40,120"/></clipPath>
+          </defs>
+          <g id="facets"></g>
+          <rect class="sweep" x="0" y="0" width="90" height="400" clip-path="url(#cut)" transform="skewX(-18)"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="facts">
+      <div><b>3 региона</b><span>Глобал, Турция, Россия</span></div>
+      <div><b>Оплата в тенге</b><span>Kaspi и Freedom</span></div>
+      <div><b>Круглосуточно</b><span>Бот принимает заказы без выходных</span></div>
+    </div>
+
+    <section id="how">
+      <h2>Заказ за три шага</h2>
+      <p class="sub">Всё происходит внутри Telegram, сайт нужен только чтобы найти бота.</p>
+      <ol class="steps">
+        <li><b>Откройте бота</b><span>Нажмите «Открыть бота в Telegram» и отправьте /start.</span></li>
+        <li><b>Пополните кошелёк</b><span>Введите сумму, оплатите по реквизитам и отправьте чек. Баланс обновится после проверки.</span></li>
+        <li><b>Выберите пакет</b><span>Укажите игровой ID в формате 123456789 (12345) и подтвердите заказ. ID можно сохранить в кошельке.</span></li>
+      </ol>
     </section>
 
-    <section class="section" id="about">
-      <div class="container">
-        <div class="section-head reveal">
-          <div><div class="kicker">01 / profile</div><h2 class="section-title">Кто такой<br>Azamatuly?</h2></div>
-          <p class="section-copy">Не резюме в формате A4. Скорее цифровой портрет: факты, интересы, навыки и немного того, что обычно остаётся между строк.</p>
-        </div>
-        <div class="profile-grid">
-          <article class="photo-card reveal">
-            <div class="photo-placeholder">
-              <img src="assets/avatar.jpg" alt="Фото Azamatuly Muhamedzhan" />
-              <div class="avatar-fallback">AM</div>
-            </div>
-            <div class="photo-caption">
-              <div><strong>Azamatuly Muhamedzhan</strong><span>06.10.2006 · Libra</span></div>
-              <div class="kbd">ADD PHOTO → assets/avatar.jpg</div>
-            </div>
-          </article>
-          <article class="data-card reveal" data-delay="1">
-            <div class="data-row"><div class="data-label">Имя</div><div class="data-value">Azamatuly Muhamedzhan</div></div>
-            <div class="data-row"><div class="data-label">Дата</div><div class="data-value">06.10.2006<small>06 October 2006</small></div></div>
-            <div class="data-row"><div class="data-label">Знак</div><div class="data-value">Весы <small>ровно тот случай, когда баланс — не метафора.</small></div></div>
-            <div class="data-row"><div class="data-label">Фокус</div><div class="data-value">Люди × технологии × результат</div></div>
-            <div class="data-row"><div class="data-label">Интересы</div><div class="data-value">Tensura / One Piece / games / digital projects</div></div>
-          </article>
-        </div>
+    <section id="prices">
+      <h2>Цены</h2>
+      <p class="sub">Выберите регион. Все цены в тенге, актуальные всегда в боте.</p>
+      <div class="tabs" role="tablist" aria-label="Регион">
+        <button class="tab" role="tab" data-k="global" aria-selected="true">🌍 Глобал</button>
+        <button class="tab" role="tab" data-k="turkey" aria-selected="false">🇹🇷 Турция</button>
+        <button class="tab" role="tab" data-k="russia" aria-selected="false">🇷🇺 Россия</button>
+        <button class="tab" role="tab" data-k="telegram" aria-selected="false">✈️ Telegram</button>
       </div>
+      <div class="board"><div id="panel" class="panel" role="tabpanel"></div></div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="section-head reveal">
-          <div><div class="kicker">02 / skills</div><h2 class="section-title">Что умею.</h2></div>
-          <a class="btn" href="skills.html">Открыть все навыки ↗</a>
-        </div>
-        <div class="skill-grid">
-          <article class="skill-card reveal"><span class="skill-index">01</span><span class="signal"></span><h3>Языки</h3><p>Свободно использую русский и казахский — в общении, работе и повседневной коммуникации.</p></article>
-          <article class="skill-card reveal" data-delay="1"><span class="skill-index">02</span><span class="signal"></span><h3>Коммуникация</h3><p>Легко нахожу общий язык, слушаю собеседника и умею выстраивать рабочий контакт.</p></article>
-          <article class="skill-card reveal" data-delay="2"><span class="skill-index">03</span><span class="signal"></span><h3>Python</h3><p>Пишу скрипты и прикладные решения, автоматизирую рутину и разбираюсь в логике кода.</p></article>
-          <article class="skill-card reveal" data-delay="3"><span class="skill-index">04</span><span class="signal"></span><h3>Продажи</h3><p>Есть практический интерес к продажам и менеджменту: диалог, потребность, предложение, результат.</p></article>
-        </div>
+    <div class="final">
+      <div>
+        <h2>Готовы пополнить?</h2>
+        <p class="sub">Если возникнут вопросы, поддержка ответит в Telegram.</p>
       </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-head reveal">
-          <div><div class="kicker">03 / easter eggs</div><h2 class="section-title">Два мира,<br>одна страница.</h2></div>
-          <p class="section-copy">Визуальные пасхалки спрятаны прямо в интерфейсе. Ничего кричащего — узнаваемость для тех, кто знает.</p>
-        </div>
-        <div class="easter-grid">
-          <article class="world-card reveal">
-            <div class="world-content">
-              <div class="world-top">
-                <div><div class="kicker">SKILL / MAGIC / WORLD</div><div class="world-title">Сила, которая выглядит как <em>свет.</em></div></div>
-                <div class="compass" aria-hidden="true"><div class="needle"></div></div>
-              </div>
-              <p class="world-copy">Интерактивная сфера реагирует на курсор и прокрутку. Это не копия персонажа — только маленький намёк тем, кто узнаёт эстетику Tensura.</p>
-              <div class="world-note"><span>RIMURU → ???</span><span>TYPE / SLIME</span></div>
-            </div>
-          </article>
-          <div class="journal-grid">
-            <article class="journal-card reveal" data-delay="1"><div class="topline"><span>LOG 001</span><span>SEA</span></div><div><h3>Grand Line mindset</h3><p>Большие маршруты начинаются с маленькой команды и одной точки на горизонте.</p></div><span class="journal-link">passthrough →</span></article>
-            <article class="journal-card reveal" data-delay="2"><div class="topline"><span>LOG 002</span><span>CORE</span></div><div><h3>Главный фанат</h3><p>Tensura + One Piece — две вселенные, которые заслужили отдельное место внутри сайта.</p></div><span class="journal-link">easter egg →</span></article>
-            <article class="journal-card reveal" data-delay="3"><div class="topline"><span>LOG 003</span><span>NOW</span></div><div><h3>Продолжение следует.</h3><p>Здесь можно добавлять реальные записи, видео, поездки, проекты или новые цели.</p></div><span class="journal-link">your vlog →</span></article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="quote-band">
-      <div class="container">
-        <p class="quote reveal">«Не стараюсь выглядеть <span class="faint">идеальным.</span><br>Стараюсь выглядеть <em>настоящим.</em>»</p>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="contact-grid">
-          <article class="contact-card reveal">
-            <div class="kicker">04 / contact</div>
-            <h3>Связаться со мной</h3>
-            <p>Для общения, проектов, предложений или просто нормального знакомства.</p>
-            <div class="contact-list">
-              <a class="contact-item" href="mailto:muhameddanazamatuly@gmail.com"><span class="contact-icon">@</span><div><span>EMAIL</span><strong>muhameddanazamatuly@gmail.com</strong></div></a>
-              <button class="contact-item" data-copy="8707 8707 493" style="text-align:left;background:none;border:0;color:inherit;cursor:pointer;width:100%;"><span class="contact-icon">TEL</span><div><span>PHONE · CLICK TO COPY</span><strong>8707 8707 493</strong></div></button>
-              <a class="contact-item" href="https://t.me/themlbb" target="_blank" rel="noreferrer"><span class="contact-icon">TG</span><div><span>TELEGRAM</span><strong>@themlbb</strong></div></a>
-            </div>
-          </article>
-          <article class="contact-card cta-panel reveal" data-delay="1">
-            <div>
-              <div class="kicker">LET'S CONNECT</div>
-              <h2 class="cta-title">Хорошие проекты начинаются с разговора.</h2>
-            </div>
-            <div class="button-row"><a class="btn primary" href="mailto:muhameddanazamatuly@gmail.com">Написать на почту ↗</a><a class="btn" href="https://t.me/themlbb" target="_blank" rel="noreferrer">Открыть Telegram ↗</a></div>
-          </article>
-        </div>
-      </div>
-    </section>
+      <a class="btn main" href="https://t.me/jewelsstorebot">Открыть бота в Telegram</a>
+    </div>
   </main>
 
-  <footer class="site-footer"><div class="container footer-grid"><div class="footer-left">© 2026 Azamatuly Muhamedzhan. Personal site.</div><div class="footer-right">Press <span class="kbd">/</span> for navigation · Type <span class="kbd">RIMURU</span> for a secret</div></div></footer>
-  <div class="toast" role="status" aria-live="polite"></div>
-  <div class="command-palette" aria-hidden="true">
-    <div class="palette-card"><div class="palette-head"><input placeholder="Куда идём? / about / skills / contact" /></div><div class="palette-links"><a href="index.html">Главная</a><a href="about.html">Обо мне</a><a href="skills.html">Навыки</a><a href="contact.html">Контакты</a></div></div>
-  </div>
-  <script src="script.js"></script>
+  <footer>
+    <span>© Jewels.gg</span>
+    <nav>
+      <a href="https://t.me/jewelsstorebot">Бот</a>
+      <a href="https://t.me/jewels_gg">Канал</a>
+      <a href="https://t.me/jewels_reviews">Отзывы</a>
+      <a href="https://t.me/themlbb">Поддержка</a>
+    </nav>
+  </footer>
+</div>
+
+<script>
+// Изумруд в ступенчатой огранке: три вложенных восьмиугольника, грани между ними
+(function () {
+  var O = [[120,40],[280,40],[360,120],[360,280],[280,360],[120,360],[40,280],[40,120]];
+  var M = [[140,80],[260,80],[320,140],[320,260],[260,320],[140,320],[80,260],[80,140]];
+  var I = [[160,120],[240,120],[280,160],[280,240],[240,280],[160,280],[120,240],[120,160]];
+  var g = document.getElementById("facets"), NS = "http://www.w3.org/2000/svg", n = 0;
+  function poly(pts, fill) {
+    var p = document.createElementNS(NS, "polygon");
+    p.setAttribute("points", pts.map(function (q) { return q.join(","); }).join(" "));
+    p.setAttribute("fill", fill);
+    p.setAttribute("stroke", "rgba(255,255,255,.28)");
+    p.setAttribute("stroke-width", "1.1");
+    p.setAttribute("stroke-linejoin", "round");
+    p.style.setProperty("--i", n++);
+    g.appendChild(p);
+  }
+  function tone(i, base, span) {
+    var a = (i + .5) * Math.PI / 4 - Math.PI * 3 / 4;   // свет падает сверху слева
+    var l = base + span * (1 + Math.cos(a)) / 2;
+    return "hsl(158,68%," + l.toFixed(1) + "%)";
+  }
+  for (var i = 0; i < 8; i++) { var j = (i + 1) % 8; poly([O[i], O[j], M[j], M[i]], tone(i, 14, 34)); }
+  for (i = 0; i < 8; i++) { j = (i + 1) % 8; poly([M[i], M[j], I[j], I[i]], tone(i, 22, 36)); }
+  poly(I, "url(#tbl)");
+})();
+</script>
+
+<script>
+(function () {
+  var DATA = {"global":[{"t":"Алмазы","i":[["50+5",392],["78+8",618],["156+16",1253],["234+23",1783],["312+32",2404],["390+39",3015],["468+46",3571],["625+81",4825],["781+97",6055],["859+104",6701],["937+113",7232],["1093+129",8656],["1250+162",9652],["1562+194",12317],["1860+335",14618],["2485+416",19445],["3099+589",24388],["3724+670",29217],["4649+883",36826],["7740+1548",61164]]},{"t":"Пропуски и наборы","i":[["Алмазный пропуск",763],["Сумеречный пропуск",4052],["Фаза пополнения (275)",1883],["Недельный Элитный Набор",392],["Месячный Эпический Набор",1975]]}],"turkey":[{"t":"Алмазы","i":[["40+4",355],["80+8",696],["121+12",1051],["201+20",1748],["449+45",3870],["897+144",7764],["2242+403",19254],["5122+1024",44478]]}],"russia":[{"t":"Алмазы","i":[["35",309],["55",476],["165",1468],["275",2398],["565",4799],["1155",9789],["1765",14689],["2975",24499],["6000",48949]]}],"telegram":[{"t":"Звёзды","i":[["50 ⭐",405],["75 ⭐",608],["100 ⭐",810],["150 ⭐",1215],["200 ⭐",1620],["250 ⭐",2025],["350 ⭐",2835],["500 ⭐",4050],["750 ⭐",6075],["1000 ⭐",8100],["1500 ⭐",12150],["2500 ⭐",20250],["5000 ⭐",40500],["10000 ⭐",81000]]},{"t":"Premium","i":[["3 мес. Premium",6470],["6 мес. Premium",8625],["12 мес. Premium",15635]]}]};
+  var panel = document.getElementById("panel");
+  var tabs = Array.prototype.slice.call(document.querySelectorAll(".tab"));
+  function money(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, "\u00a0") + "\u00a0₸"; }
+  function label(name) {
+    var m = /^(\d+)\+(\d+)$/.exec(name);
+    if (m) return "<b>" + m[1] + "</b><em>+" + m[2] + "</em><small>алмазов</small>";
+    if (/^\d+$/.test(name)) return "<b>" + name + "</b><small>алмазов</small>";
+    return "<b>" + name + "</b>";
+  }
+  function render(k) {
+    panel.innerHTML = DATA[k].map(function (g) {
+      return '<div class="group"><h3>' + g.t + '</h3><div class="grid">' +
+        g.i.map(function (r) {
+          return '<div class="row"><span class="nm">' + label(r[0]) + '</span><span class="pr">' + money(r[1]) + "</span></div>";
+        }).join("") + "</div></div>";
+    }).join("");
+    panel.style.animation = "none"; void panel.offsetWidth; panel.style.animation = "";
+    tabs.forEach(function (t) {
+      var on = t.dataset.k === k;
+      t.setAttribute("aria-selected", on);
+      t.tabIndex = on ? 0 : -1;
+    });
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener("click", function () { render(t.dataset.k); });
+    t.addEventListener("keydown", function (e) {
+      var d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+      if (!d) return;
+      var n = tabs[(i + d + tabs.length) % tabs.length];
+      n.focus(); render(n.dataset.k);
+    });
+  });
+  render("global");
+})();
+</script>
 </body>
 </html>
