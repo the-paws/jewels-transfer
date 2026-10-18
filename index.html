@@ -25,14 +25,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":"Organization","@id":"https://jewels.gg/#org","name":"Jewels.gg","alternateName":["Jewels GG","Jewels","Джевелс"],"url":"https://jewels.gg/","sameAs":["https://t.me/themlbb"],"contactPoint":{"@type":"ContactPoint","contactType":"customer support","url":"https://t.me/themlbb","availableLanguage":["ru","kk"]}},
+{"@type":"Organization","@id":"https://jewels.gg/#org","name":"Jewels.gg","alternateName":["Jewels GG","Jewels","Джевелс"],"url":"https://jewels.gg/","sameAs":["https://t.me/themlbb"],"founder":{"@type":"Person","name":"Paws","sameAs":"https://t.me/themlbb"},"contactPoint":{"@type":"ContactPoint","contactType":"customer support","url":"https://t.me/themlbb","availableLanguage":["ru","kk"]}},
 {"@type":"WebSite","@id":"https://jewels.gg/#site","url":"https://jewels.gg/","name":"Jewels.gg - mobile legends","inLanguage":"ru","publisher":{"@id":"https://jewels.gg/#org"}},
 {"@type":"Product","name":"Алмазы Mobile Legends: Bang Bang (MLBB)","description":"Пополнение алмазов Mobile Legends по Game ID и Server ID.","brand":{"@id":"https://jewels.gg/#org"},"offers":{"@type":"AggregateOffer","priceCurrency":"KZT","lowPrice":"399","availability":"https://schema.org/InStock","url":"https://jewels.gg/"}},
 {"@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"Как купить алмазы Mobile Legends на Jewels.gg?","acceptedAnswer":{"@type":"Answer","text":"Напишите в Telegram @themlbb, выберите набор, отправьте Game ID и Server ID, оплатите заказ и получите алмазы на аккаунт."}},
 {"@type":"Question","name":"Сколько стоят алмазы Mobile Legends?","acceptedAnswer":{"@type":"Answer","text":"Цены на алмазы Mobile Legends начинаются от 399 тенге. Актуальный прайс по всем наборам — в Telegram @themlbb."}},
 {"@type":"Question","name":"Что нужно для пополнения MLBB?","acceptedAnswer":{"@type":"Answer","text":"Только Game ID и Server ID из профиля игры. Пароль от аккаунта не нужен."}},
-{"@type":"Question","name":"Как связаться по сотрудничеству и опту?","acceptedAnswer":{"@type":"Answer","text":"По сотрудничеству, оптовым заказам и любым вопросам пишите в Telegram @themlbb."}}
+{"@type":"Question","name":"Как связаться по сотрудничеству и опту?","acceptedAnswer":{"@type":"Answer","text":"По сотрудничеству, оптовым заказам и любым вопросам пишите в Telegram @themlbb."}},
+{"@type":"Question","name":"Кому принадлежит Jewels.gg?","acceptedAnswer":{"@type":"Answer","text":"Сайт Jewels.gg принадлежит одному лицу — владельцу под псевдонимом Paws. Связь с владельцем: Telegram @themlbb."}}
 ]}]}
 </script>
 <script>document.documentElement.classList.add('js');setTimeout(function(){document.documentElement.classList.add('rdy')},4500)</script>
@@ -175,12 +176,54 @@ html.lock{overflow:hidden}
 @media(max-width:700px){#gem3d{width:96vw;right:-24%;top:64%}}
 .stage::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(460px circle at var(--cx,70%) var(--cy,40%),rgba(143,233,255,.17),transparent 60%)}
 #fx{position:fixed;inset:0;pointer-events:none;z-index:55}
+
+body{counter-reset:sec}
+.aurora{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.aurora i{position:absolute;border-radius:50%;animation:drift 20s ease-in-out infinite alternate}
+.aurora i:nth-child(1){width:60vmax;height:60vmax;left:-15vmax;top:-10vmax;background:radial-gradient(circle,rgba(110,80,255,.5),transparent 65%)}
+.aurora i:nth-child(2){width:55vmax;height:55vmax;right:-18vmax;top:30vh;background:radial-gradient(circle,rgba(41,199,242,.38),transparent 65%);animation-duration:26s}
+.aurora i:nth-child(3){width:45vmax;height:45vmax;left:20vw;bottom:-22vmax;background:radial-gradient(circle,rgba(255,176,46,.22),transparent 65%);animation-duration:30s}
+@keyframes drift{to{transform:translate3d(10vw,-8vh,0) scale(1.18)}}
+header{height:70px;background:none;border:0;-webkit-backdrop-filter:none;backdrop-filter:none;pointer-events:none}
+header .wrap,.dock,.steps li,details,.contact,.packs li:not(.top){background:linear-gradient(135deg,rgba(255,255,255,.17),rgba(255,255,255,.05) 55%,rgba(255,255,255,.1));-webkit-backdrop-filter:blur(20px) saturate(1.9) brightness(1.12);backdrop-filter:blur(20px) saturate(1.9) brightness(1.12);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.6),inset 0 -1px 0 rgba(255,255,255,.12),inset 1px 0 0 rgba(255,255,255,.18),inset 0 0 26px rgba(255,255,255,.06),0 20px 44px rgba(6,8,44,.5)}
+header .wrap,.dock{backdrop-filter:url(#lens) blur(14px) saturate(1.9) brightness(1.12)}
+header .wrap::before,.dock::before,.steps li::before,.contact::before,details::before,.packs li:not(.top)::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;pointer-events:none;background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(255,255,255,0) 30%,rgba(255,255,255,0) 68%,rgba(255,255,255,.6));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude}
+header .wrap::after,.dock::after,.steps li::after,.contact::after,details::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:var(--go,0);transition:opacity .25s;background:radial-gradient(220px circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,.28),transparent 62%)}
+header .wrap{pointer-events:auto;width:min(820px,calc(100% - 24px));max-width:none;margin:8px auto 0;height:56px;padding:0 8px 0 18px;border-radius:999px;gap:6px}
+header nav{display:flex;gap:2px;margin:0 auto}
+header nav a{padding:8px 14px;border-radius:999px;color:var(--mute);font-weight:700;font-size:.92rem;text-decoration:none;transition:background .3s,color .3s}
+header nav a:hover,header nav a.on{background:rgba(255,255,255,.16);color:#fff}
+header .btn{min-height:40px;padding:0 18px;font-size:.92rem}
+@media(max-width:700px){header nav{display:none}header .wrap{justify-content:space-between}}
+.stage{top:70px;height:calc(100svh - 70px)}
+.btn{background:linear-gradient(180deg,#FFDF8A,#FFB92E);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.75),inset 0 -2px 6px rgba(150,80,0,.35),0 8px 22px rgba(255,170,30,.35)}
+.btn:hover{background:linear-gradient(180deg,#FFE9A8,#FFC64F)}
+.btn.ghost{background:rgba(255,255,255,.1);-webkit-backdrop-filter:blur(14px) saturate(1.8);backdrop-filter:blur(14px) saturate(1.8);border:1px solid rgba(255,255,255,.28);color:#fff;box-shadow:inset 0 1.5px 0 rgba(255,255,255,.45),0 8px 22px rgba(6,8,44,.35)}
+.btn.ghost:hover{background:rgba(255,255,255,.2)}
+.dock{position:absolute;left:50%;bottom:clamp(14px,4svh,34px);translate:-50% 0;z-index:4;display:flex;gap:4px;padding:6px;border-radius:999px;width:max-content;max-width:calc(100% - 24px);animation:up .9s cubic-bezier(.2,.9,.2,1) 1.45s backwards}
+.js:not(.rdy) .dock{animation-play-state:paused}
+.dock span{display:flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;font:700 .9rem var(--body);white-space:nowrap}
+.dock span+span{box-shadow:-1px 0 0 rgba(255,255,255,.16)}
+.dock svg{width:20px;height:20px}
+.dock b{font-family:var(--display);color:var(--gold)}
+@media(max-width:700px){.dock span:nth-child(2){display:none}.dock span{padding:9px 14px;font-size:.82rem}}
+.steps li,details,.contact{position:relative}
+.steps li{border-radius:28px;padding:24px}
+.packs li:not(.top){border-radius:26px}
+details{border-radius:24px;margin-bottom:12px;padding:0 22px}
+.contact{border-radius:40px;padding:44px 26px;animation:none;background:linear-gradient(135deg,rgba(255,255,255,.18),rgba(70,60,220,.4))}
+section h2::before{counter-increment:sec;content:"0" counter(sec);display:block;font:700 .8rem var(--body);letter-spacing:.24em;color:var(--ice);margin-bottom:12px}
+@media(prefers-reduced-transparency:reduce){header .wrap,.dock,.steps li,details,.contact,.packs li:not(.top){background:rgba(24,28,92,.94);-webkit-backdrop-filter:none;backdrop-filter:none}}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){header .wrap,.dock,.steps li,details,.contact,.packs li:not(.top){background:rgba(24,28,92,.9)}}
 </style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="gem" viewBox="0 0 64 64"><path d="M6 24h52L32 58z" fill="#2B2F9E"/><path d="M6 24h13l13 34zM58 24H45L32 58z" fill="#8FE9FF" fill-opacity=".6"/><path d="M15 10h34l9 14H6z" fill="#F4F7FF" fill-opacity=".88"/><path d="M19 24l13-14 13 14z" fill="#8FE9FF"/></symbol></svg>
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="lens" x="-4%" y="-4%" width="108%" height="108%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency=".011 .018" numOctaves="2" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="18" xChannelSelector="R" yChannelSelector="G"/></filter></svg>
 <header><div class="wrap">
 <a class="logo" href="/" aria-label="Jewels.gg - на главную"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 58 6 24l9-14h34l9 14z" fill="#8FE9FF"/><path d="M6 24h52L32 58z" fill="#2B2F9E"/><path d="M15 10l8 14h18l8-14z" fill="#F4F7FF" opacity=".55"/></svg>Jewels.gg</a>
+<nav aria-label="Разделы"><a href="#packs">Наборы</a><a href="#how">Как купить</a><a href="#faq">Вопросы</a></nav>
 <a class="btn" href="https://t.me/themlbb" rel="noopener">Купить в Telegram</a>
 </div></header>
 
@@ -192,7 +235,8 @@ html.lock{overflow:hidden}
 <a class="btn" href="https://t.me/themlbb?text=%D0%A5%D0%BE%D1%87%D1%83%20%D0%BA%D1%83%D0%BF%D0%B8%D1%82%D1%8C%20%D0%B0%D0%BB%D0%BC%D0%B0%D0%B7%D1%8B%20MLBB" rel="noopener">Заказать алмазы</a>
 <a class="btn ghost" href="#packs">Наборы</a>
 </div>
-</div></div></div>
+</div>
+<div class="dock" aria-hidden="true"><span><svg viewBox="0 0 64 64"><use href="#gem"/></svg>Mobile Legends по ID</span><span>от <b>399 ₸</b></span><span>Telegram @themlbb</span></div></div></div>
 
 <div class="belt" aria-hidden="true"><div class="row"></div><div class="row"></div></div>
 
@@ -227,6 +271,7 @@ html.lock{overflow:hidden}
 <details><summary>Сколько стоят алмазы Mobile Legends?</summary><p>Цены начинаются от 399 тенге. Актуальный прайс по всем наборам пришлём в Telegram @themlbb.</p></details>
 <details><summary>Что нужно для пополнения MLBB?</summary><p>Только Game ID и Server ID из профиля игры. Пароль от аккаунта не нужен.</p></details>
 <details><summary>Как связаться по сотрудничеству и опту?</summary><p>По сотрудничеству, оптовым заказам и любым вопросам пишите в Telegram @themlbb.</p></details>
+<details><summary>Кому принадлежит Jewels.gg?</summary><p>Сайт принадлежит одному лицу — владельцу под псевдонимом Paws. Связь с владельцем: Telegram @themlbb. Подробнее в <a href="/terms.html">условиях использования</a>.</p></details>
 </div></section>
 
 <section id="contact"><div class="wrap"><div class="contact">
@@ -238,7 +283,8 @@ html.lock{overflow:hidden}
 
 <footer><div class="wrap">
 <p>Jewels.gg (Jewels GG, Джевелс) — покупка алмазов Mobile Legends: Bang Bang, topup MLBB, мобайл легендс пополнение по ID.</p>
-<p>Jewels.gg - mobile legends. Связь: <a href="https://t.me/themlbb" rel="noopener">Telegram @themlbb</a>. Mobile Legends: Bang Bang — торговая марка Moonton. Jewels.gg не связан с Moonton.</p>
+<p>Сайт Jewels.gg принадлежит одному лицу — владельцу под псевдонимом Paws. Связь с владельцем: <a href="https://t.me/themlbb" rel="noopener">Telegram @themlbb</a>.</p>
+<p><a href="/terms.html">Условия использования</a>. Mobile Legends: Bang Bang — торговая марка Moonton. Jewels.gg не связан с Moonton.</p>
 </div></footer>
 <script>
 (()=>{
@@ -307,7 +353,7 @@ document.addEventListener('pointerdown',e=>{if(!e.target.closest||!e.target.clos
 (()=>{
 const D=document.documentElement,R=matchMedia('(prefers-reduced-motion:reduce)').matches,st=document.querySelector('.stage'),hero=document.querySelector('.hero'),
 clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)),sm=(a,b,x)=>{x=clamp((x-a)/(b-a));return x*x*(3-2*x)},mix=(a,b,x)=>a+(b-a)*x;
-const c=document.createElement('canvas');c.id='gem3d';c.setAttribute('aria-hidden','true');st.appendChild(c);
+const dock=document.querySelector('.dock'),c=document.createElement('canvas');c.id='gem3d';c.setAttribute('aria-hidden','true');st.appendChild(c);
 const g=c.getContext('2d'),V=[],F=[],n=8,vt=(r,y,a)=>V.push([r*Math.cos(a),y,r*Math.sin(a)])-1,T=[],G=[],M=[];
 for(let i=0;i<n;i++){const a=i*Math.PI*2/n;T.push(vt(.55,.42,a));G.push(vt(1,0,a));M.push(vt(.82,.2,a+Math.PI/n))}
 const C=vt(0,-.95,0);F.push(T.slice());
@@ -336,7 +382,7 @@ addEventListener('pointermove',e=>{if(e.pointerType==='touch')return;mx=e.client
 const r=st.getBoundingClientRect();st.style.setProperty('--cx',e.clientX-r.left+'px');st.style.setProperty('--cy',e.clientY-r.top+'px');
 for(let i=0;i<2;i++)PA.push({x:e.clientX,y:e.clientY,vx:(Math.random()-.5)*1.4,vy:(Math.random()-.5)*1.4+.3,l:1,c:Math.random()<.5?'143,233,255':'255,200,74',s:2+Math.random()*4})},{passive:true});
 function loop(t){t/=1000;vel+=((scrollY-ly)-vel)*.15;ly=scrollY;const r=hero.getBoundingClientRect(),p=clamp(-r.top/Math.max(1,hero.offsetHeight-st.clientHeight));
-if(r.bottom>0){yaw+=.007+ex*.14+Math.min(Math.abs(vel),60)*.0009;pit+=(tp-pit)*.06;draw(t);c.style.transform=`scale(${1+p*3.4})`;c.style.opacity=1-sm(.1,.5,p)}
+if(r.bottom>0){yaw+=.007+ex*.14+Math.min(Math.abs(vel),60)*.0009;pit+=(tp-pit)*.06;draw(t);c.style.transform=`scale(${1+p*3.4})`;c.style.opacity=1-sm(.1,.5,p);dock.style.opacity=1-sm(.04,.26,p)}
 fc.clearRect(0,0,fx.width,fx.height);
 for(let i=PA.length-1;i>=0;i--){const q=PA[i];q.l-=.022;if(q.l<=0){PA.splice(i,1);continue}q.x+=q.vx;q.y+=q.vy;fc.globalAlpha=q.l;fc.fillStyle=`rgb(${q.c})`;fc.beginPath();fc.moveTo(q.x,q.y-q.s);fc.lineTo(q.x+q.s*.7,q.y);fc.lineTo(q.x,q.y+q.s);fc.lineTo(q.x-q.s*.7,q.y);fc.fill()}
 requestAnimationFrame(loop)}
@@ -346,6 +392,14 @@ const o=document.createElement('div');o.id='intro';o.innerHTML='<i></i><i></i><b
 const b=o.querySelector('b'),t0=performance.now();
 (function f(){const k=Math.min(1,(performance.now()-t0)/1600),e=1-Math.pow(1-k,3);b.textContent=Math.round(e*399);o.style.setProperty('--pg',e);ex=1-e;
 if(k<1)requestAnimationFrame(f);else{o.classList.add('go');D.classList.remove('lock');D.classList.add('rdy');setTimeout(()=>o.remove(),1400)}})();
+})();
+</script>
+<script>
+(()=>{
+const $=(q)=>[...document.querySelectorAll(q)];
+$('header .wrap,.dock,.steps li,details,.contact').forEach(l=>{l.addEventListener('pointermove',e=>{if(e.pointerType==='touch')return;const r=l.getBoundingClientRect(),st=l.style;st.setProperty('--gx',e.clientX-r.left+'px');st.setProperty('--gy',e.clientY-r.top+'px');st.setProperty('--go',1)});l.addEventListener('pointerleave',()=>l.style.setProperty('--go',0))});
+const links=$('header nav a'),io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.hash==='#'+x.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+['packs','how','faq'].forEach(i=>io.observe(document.getElementById(i)));
 })();
 </script>
 </body>
